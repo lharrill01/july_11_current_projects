@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.CombineFileInputFormat"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.awt.List"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.project1.utility.ConnectionUtility"/>
     <fullyQualifiedTypeName name="com.project1.utility.CloseStreams"/>
     <fullyQualifiedTypeName name="gres.utility.ConnectionUtility"/>
@@ -17,10 +16,8 @@
     <fullyQualifiedTypeName name="gres.data.EmployeeDAO"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-    <fullyQualifiedTypeName name="gres.model.Employee"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
-    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="gres.utility.CloseStreams"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -30,4 +27,9 @@
     <fullyQualifiedTypeName name="gres.data.EmployeeDAOImplOJDBC"/>
     <fullyQualifiedTypeName name="com.project1.model.EmployeeDAO"/>
     <fullyQualifiedTypeName name="gres.service.EmployeeLoginService"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="gres.model.Employee"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="gres.model.Reimbursement"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
 </qualifiedTypeNameHistroy>

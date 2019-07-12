@@ -245,3 +245,11 @@
 127.0.0.1 - - [11/Jul/2019:23:13:42 -0400] "GET / HTTP/1.1" 404 1074
 0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:13:54 -0400] "POST /gres/GresLoginServlet2 HTTP/1.1" 200 1545
 0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:13:59 -0400] "POST /gres/GresFetchServlet HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jul/2019:23:54:27 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:54:39 -0400] "POST /gres/GresLoginServlet2 HTTP/1.1" 500 1618
+0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:54:53 -0400] "POST /gres/GresLoginServlet2 HTTP/1.1" 200 1545
+0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:55:08 -0400] "POST /gres/GresFetchServlet HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jul/2019:23:58:33 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:58:34 -0400] "GET /gres/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:58:47 -0400] "POST /gres/GresLoginServlet2 HTTP/1.1" 200 1545
+0:0:0:0:0:0:0:1 - - [11/Jul/2019:23:59:21 -0400] "POST /gres/GresFetchServlet HTTP/1.1" 200 -

@@ -2,16 +2,16 @@ package gres.model;
 
 public class Reimbursement {
 	
-	long id;
+	int id;
 	String email;
 	String selection;
 	double rAmount;
-	boolean adchoice;
+	String adchoice;
 	
 
 	
 	
-	public Reimbursement(long id, String email, String selection, double rAmount, boolean adchoice) {
+	public Reimbursement(int id, String email, String selection, double rAmount, String adchoice) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -23,14 +23,14 @@ public class Reimbursement {
 
 
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
 
 
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -79,14 +79,14 @@ public class Reimbursement {
 	
 
 
-	public boolean isAdchoice() {
+	public String isAdchoice() {
 		return adchoice;
 	}
 
 
 
 
-	public void setAdchoice(boolean adchoice) {
+	public void setAdchoice(String adchoice) {
 		this.adchoice = adchoice;
 	}
 

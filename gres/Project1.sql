@@ -18,7 +18,7 @@ insert into USER_ACCOUNT (email, password, roleid) values ('jdoe01@test.com', 'j
 
 drop table reimbursement_pool;
 
-create table reimbursement_pool(id number(6), email varchar(20), rstuff varchar(20), rAmount number(8,2), adchoice boolean);
+create table reimbursement_pool( id number(6), email varchar(20), rstuff varchar(20), rAmount number(8,2), adchoice varchar(20));
 
 select * from reimbursement_pool;
 select * from USER_ACCOUNT;

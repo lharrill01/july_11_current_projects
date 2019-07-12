@@ -15,3 +15,23 @@
 1562895257008	Rename type 'ReimbursementDAO'
 1562895290235	Move file
 1562895298926	Move compilation unit
+1562937205287	Move 'AccountInfo.html' to 'webapp'
+1562937210797	Move 'AllApprovedRequests.html' to 'webapp'
+1562937213061	Move 'AllDeniedRequests.html' to 'webapp'
+1562937215344	Move 'AllRequests.html' to 'webapp'
+1562937217473	Move 'ApprovedRequests.html' to 'webapp'
+1562937219530	Move 'DeniedRequests.html' to 'webapp'
+1562937223402	Move 'madwelcome.html' to 'webapp'
+1562937226810	Move 'NewRequests.html' to 'webapp'
+1562937229860	Move 'PendingRequests.html' to 'webapp'
+1562937239626	Rename resource 'pages'
+1562937285601	Delete element
+1562937290556	Delete element
+1562937295899	Delete element
+1562937300669	Move 'errfwelcome.html' to 'webapp'
+1562937316465	Delete element
+1562937332104	Move 'fetchrequests.js' to 'js'
+1562937351903	Move 'fetchpost.js' to 'js'
+1562937358378	Delete element
+1562937366232	Delete element
+1562937374296	Delete element

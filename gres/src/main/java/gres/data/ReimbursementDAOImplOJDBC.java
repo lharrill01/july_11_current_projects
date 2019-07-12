@@ -12,17 +12,17 @@ import gres.utility.ConnectionUtility;
 public class ReimbursementDAOImplOJDBC implements ReimbursementDAO {
 
 	@Override
-	public Reimbursement getReimbursement(int id, String email, String selection, double rAmount, boolean adchoice) {
+	public Reimbursement getReimbursement(int id, String email, String rStuff, double rAmount, String adchoice) {
 
 		PreparedStatement statement = null;
 
 		try(Connection conn = ConnectionUtility.getConnection()) {
 			//create our statement:
-			statement =  conn.prepareStatement("UPDATE Reimbursement_pool SET ID=?, EMAIL=?, SELECTION=?, ADCHOICE=?");
+			statement =  conn.prepareStatement("insert into Reimbursement_pool(id, email, rStuff, rAmount, adchoice) values(?,?,?,?,?)");
 			statement.setInt(1, id);
 			statement.setString(2, email);
-			statement.setString(3, selection);
-			statement.setBoolean(4, adchoice);
+			statement.setString(3, rStuff);
+			statement.setString(4, adchoice);
 			
 			// Statement objects can execute SQL queries
 			// THe most basic form of this:
@@ -44,17 +44,17 @@ public class ReimbursementDAOImplOJDBC implements ReimbursementDAO {
 	}
 
 	@Override
-	public Reimbursement updateReimbursement(int id, String email, String selection, double rAmount, boolean adchoice) {
+	public Reimbursement updateReimbursement(int id, String email, String rStuff, double rAmount, String adchoice) {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 
 		try(Connection conn = ConnectionUtility.getConnection()) {
 			//create our statement:
-			statement =  conn.prepareStatement("SELECT * FROM Reimbursement_pool where email=?");
+			statement =  conn.prepareStatement(" * FROM Reimbursement_pool where email=?");
 			statement.setInt(1, id);
 			statement.setString(2, email);
-			statement.setString(3, selection);
-			statement.setBoolean(4, adchoice);
+			statement.setString(3, rStuff);
+			statement.setString(4, adchoice);
 			
 			// Statement objects can execute SQL queries
 			// THe most basic form of this:
@@ -62,17 +62,17 @@ public class ReimbursementDAOImplOJDBC implements ReimbursementDAO {
 			// ResultSet stores all the results from a successful query
 			result = statement.getResultSet();
 			// Create ourselves a new PetType object for each row:
-			if(result.next()) {
+			result.next();
 				
 			id = result.getInt("id");
 			email = result.getString("email");
-			selection = result.getString("selection");
-			adchoice = result.getBoolean("adchoice");
+			rStuff = result.getString("rStuff");
+			adchoice = result.getString("adchoice");
 			
 			System.out.println(email + " " + adchoice);
 			System.out.println("RoleID 1 in EmployeeDAOJDBC is: " + adchoice);
-			return new Reimbursement(id, email, selection, rAmount, adchoice);
-			}
+			return new Reimbursement(id, email, rStuff, rAmount, adchoice);
+			
 		} catch(SQLException e) {
 			e.printStackTrace();
 			return null;
@@ -82,21 +82,22 @@ public class ReimbursementDAOImplOJDBC implements ReimbursementDAO {
 		}
 		
 		
-		return null;
+		//return null;
 	}
 
 	@Override
-	public Reimbursement createReimbursement(int id, String email, String selection, double rAmount, boolean adchoice) {
+	public Reimbursement createReimbursement(int id, String email, String rStuff, double rAmount, String adchoice) {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 
 		try(Connection conn = ConnectionUtility.getConnection()) {
 			//create our statement:
-			statement =  conn.prepareStatement("SELECT * FROM Reimbursement_pool where email=?");
+			statement =  conn.prepareStatement("insert into Reimbursement_pool(id, email, rStuff, rAmount, adchoice) values(?,?,?,?,?)");
 			statement.setInt(1, id);
 			statement.setString(2, email);
-			statement.setString(3, selection);
-			statement.setBoolean(4, adchoice);
+			statement.setString(3, rStuff);
+			statement.setDouble(4, rAmount);			
+			statement.setString(5, adchoice);
 			
 			// Statement objects can execute SQL queries
 			// THe most basic form of this:
@@ -108,12 +109,13 @@ public class ReimbursementDAOImplOJDBC implements ReimbursementDAO {
 				
 			id = result.getInt("id");
 			email = result.getString("email");
-			selection = result.getString("selection");
-			adchoice = result.getBoolean("adchoice");
+			rStuff = result.getString("rStuff");
+			rAmount = result.getDouble("rAmount");
+			adchoice = result.getString("adchoice");
 			
 			System.out.println(email + " " + adchoice);
 			System.out.println("RoleID 1 in EmployeeDAOJDBC is: " + adchoice);
-			return new Reimbursement(id, email, selection, rAmount, adchoice);
+			return new Reimbursement(id, email, rStuff, rAmount, adchoice);
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

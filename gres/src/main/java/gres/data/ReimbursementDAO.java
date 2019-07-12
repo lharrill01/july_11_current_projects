@@ -19,7 +19,7 @@ public interface ReimbursementDAO {
 	 * @param password password of the employee
 	 * @return the employee from the DB that matches email and password
 	 */
-	public Reimbursement getReimbursement(int id, String email, String selection, double rAmount, boolean adchoice);
+	public Reimbursement getReimbursement(int id, String email, String rStuff, double rAmount, String adchoice);
 	
 	/**
 	 * Gets employee from DB based on id
@@ -27,7 +27,7 @@ public interface ReimbursementDAO {
 	 * @param id
 	 * @return the employee from the DB that matches given id
 	 */
-	public Reimbursement updateReimbursement(int id, String email, String selection, double rAmount, boolean adchoice);
+	public Reimbursement updateReimbursement(int id, String email, String rStuff, double rAmount, String adchoice);
 	
 	/**
 	 * Creates a new employee in the DB
@@ -36,5 +36,5 @@ public interface ReimbursementDAO {
 	 * @return true or false based on success or failure of employee creation
 	 */
 
-	public Reimbursement createReimbursement(int id, String email, String selection, double rAmount, boolean adchoice);
+	public Reimbursement createReimbursement(int id, String email, String rStuff, double rAmount, String adchoice);
 }

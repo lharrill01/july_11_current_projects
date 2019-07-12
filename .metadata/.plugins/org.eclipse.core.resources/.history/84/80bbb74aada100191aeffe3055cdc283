@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home: GERS</title>
+</head>
+<body>
+<nav>
+<a href="Account.html">Account Info</a>
+<a href="pendingRequests.html">Pending Requests</a>
+<a href="approvedRequests.html">Approved Requests</a>
+<a href="deniedRequests.html">Denied Requests</a>
+
+
+
+</nav>
+    <h2>Welcome to the Electronic Reimbursement Request Form</h2>
+<div>
+<form action="/" method="post">
+<label> First Name: </label>
+<input type="text" name="firstName">
+</div>
+<div>
+<label> Last Name: </label>
+<input type="text" name="lastName">
+</div>
+<div>
+<label> Email: </label>
+<input type="email" name="emailaddress">
+</div>
+<div>
+<label>Total Amount to be Reimbursed: </label>
+<input type="text" name="rAmount">
+</div>
+<div>
+<label> Upload Recipes Here: </label>
+<input type="file" name="reciepts" accept="image/*" multiple>
+</div>
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

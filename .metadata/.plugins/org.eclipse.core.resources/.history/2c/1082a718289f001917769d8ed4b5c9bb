@@ -1,0 +1,7 @@
+package com.revature.model;
+
+import com.revature.Data.UserDAO;
+
+public class User implements UserDAO {
+
+}

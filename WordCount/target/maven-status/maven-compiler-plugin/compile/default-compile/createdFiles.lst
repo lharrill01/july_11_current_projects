@@ -1,0 +1,3 @@
+com\revature\map\WordMapper.class
+com\revature\WordCount.class
+com\revature\reduce\SumReducer.class

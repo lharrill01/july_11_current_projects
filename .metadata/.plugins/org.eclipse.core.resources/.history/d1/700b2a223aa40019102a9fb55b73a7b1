@@ -1,0 +1,48 @@
+package gres.data;
+
+import gres.model.Employee;
+
+public interface EmployeeDAO {
+
+	/**
+	 * Single line description
+	 * 
+	 * information about params and return
+	 */
+	
+	/**
+	 * Gets Employee from DB based on email and password
+	 * 
+	 * @param email email of the employee
+	 * @param password password of the employee
+	 * @return the employee from the DB that matches email and password
+	 */
+	public Employee getEmployee(String email, String password, int roleid);
+	
+	/**
+	 * Gets employee from DB based on id
+	 * 
+	 * @param id
+	 * @return the employee from the DB that matches given id
+	 */
+	//public Employee getEmployee(long id);
+	
+	/**
+	 * Creates a new employee in the DB
+	 * 
+	 * @param employee the Employee that should be created
+	 * @return true or false based on success or failure of employee creation
+	 */
+	//public boolean createEmployee(Employee employee);
+	
+	/**
+	 * Creates a new employee in the DB
+	 * 
+	 * @param employee the Employee that should be created
+	 * @return true or false based on success or failure of employee creation
+	 */
+	public boolean updateEmployee(Employee employee);
+
+	Employee getEmployee(String email);
+	
+}

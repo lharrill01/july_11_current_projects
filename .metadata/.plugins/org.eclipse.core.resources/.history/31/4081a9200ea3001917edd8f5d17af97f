@@ -1,0 +1,52 @@
+package gres.data;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import gres.model.Employee;
+import gres.utility.CloseStreams;
+import gres.utility.ConnectionUtility;
+
+
+
+
+public class EmployeeDAOImplOJDBC implements EmployeeDAO {
+
+	@Override
+	public Employee getEmployee(String email, String password, int roleid) {
+		
+		for(Employee empl: employeeList) {
+			if(empl.getEmail().equals(email)) {
+				if(empl.getPassWord().equals(password)) {
+					if(empl.getRoleId() == roleid) {
+						return empl;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public Employee getEmployee(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean createEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	
+}

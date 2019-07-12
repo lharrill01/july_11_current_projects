@@ -1,0 +1,19 @@
+package gres.data;
+
+import gres.model.Reimbursement;
+
+public class ReimbursementDAOImplOJDBC implements ReimbursementDAO {
+
+	@Override
+	public Reimbursement getReimbursement(String email, String selection, double rAmount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Reimbursement updateReimbursement(String email, String selection, double rAmount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

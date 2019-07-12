@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to the Electronic Reimbursment Request Form</title>
+</head>
+<h2>Welcome to the Electronic Reimbursement Request Form</h2>
+
+<input type="file" name="reciepts" accept="image/*">
+<body>
+				
+		
+
+</body>
+</html>

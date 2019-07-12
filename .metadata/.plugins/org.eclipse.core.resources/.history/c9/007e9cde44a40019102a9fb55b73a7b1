@@ -1,0 +1,9 @@
+package gres.data;
+
+public class ReimbursementDAO {
+	
+	String email;
+	String selection;
+	double rAmount;
+
+}

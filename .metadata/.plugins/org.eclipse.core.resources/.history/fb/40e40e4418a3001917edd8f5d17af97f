@@ -1,0 +1,58 @@
+package gres.data;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import gres.model.Employee;
+
+
+
+
+public class EmployeeDAOImplOJDBC implements EmployeeDAO {
+	
+	List<Employee> employeeList = new ArrayList<>();
+	
+
+	@Override
+	public Employee getEmployee(String email, String password, int roleid) {
+		
+		for(Employee empl: employeeList) {
+			if(empl.getEmail().equals(email)) {
+				if(empl.getPassWord().equals(password)) {
+					if(empl.getRoleId() == roleid) {
+						return empl;
+					}
+					return null;
+				}
+				return null;
+			}
+			
+		}
+		return null;
+	}
+
+	@Override
+	public Employee getEmployee(long id) {
+		for(Employee empl: employeeList) {
+			if(empl.getId() == id) {
+				return empl;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public boolean createEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeList.add(employee);
+	}
+
+	@Override
+	public boolean updateEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	
+}

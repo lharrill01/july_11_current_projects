@@ -1,0 +1,8 @@
+package com.project1.login;
+
+public interface Sessionable {
+	
+	public void Elogin(String email, String passWord, int roleId);
+	public void Elogout();
+
+}

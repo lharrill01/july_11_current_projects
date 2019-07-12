@@ -1,0 +1,39 @@
+package gres.data;
+
+public class Reimbursement {
+	
+	String email;
+	String selection;
+	double rAmount;
+	public Reimbursement(String email, String selection, double rAmount) {
+		super();
+		this.email = email;
+		this.selection = selection;
+		this.rAmount = rAmount;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSelection() {
+		return selection;
+	}
+	public void setSelection(String selection) {
+		this.selection = selection;
+	}
+	public double getrAmount() {
+		return rAmount;
+	}
+	public void setrAmount(double rAmount) {
+		this.rAmount = rAmount;
+	}
+	@Override
+	public String toString() {
+		return "ReimbursementDAO [email=" + email + ", selection=" + selection + ", rAmount=" + rAmount + "]";
+	}
+	
+	
+
+}

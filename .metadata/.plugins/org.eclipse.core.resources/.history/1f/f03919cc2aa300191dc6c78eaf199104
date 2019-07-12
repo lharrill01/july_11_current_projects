@@ -1,0 +1,22 @@
+package com.revature.reduce;
+
+import java.io.IOException;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.mockito.internal.stubbing.VoidMethodStubbableImpl;
+
+public class MaxReducer extends Reducer<Text, IntWritable, Text, IntWritable>{
+	
+	public static String CURRENT_MAX_WORD = null;
+	public static int CURRENT_MAX_COUNT = Integer.MIN_VALUE;
+	
+	@Override
+	protected void reduce(Text arg0, Iterable<IntWritable> arg1,
+			Reducer<Text, IntWritable, Text, IntWritable>.Context arg2) throws IOException, InterruptedException {
+	
+		int max;
+	}
+
+}

@@ -1,0 +1,40 @@
+package gres.data;
+
+import gres.model.Employee;
+import gres.model.Reimbursement;
+
+public interface ReimbursementDAO {
+
+
+	/**
+	 * Single line description
+	 * 
+	 * information about params and return
+	 */
+	
+	/**
+	 * Gets Employee from DB based on email and password
+	 * 
+	 * @param email email of the employee
+	 * @param password password of the employee
+	 * @return the employee from the DB that matches email and password
+	 */
+	public Reimbursement getReimbursement(String email, String selection, double rAmount);
+	
+	/**
+	 * Gets employee from DB based on id
+	 * 
+	 * @param id
+	 * @return the employee from the DB that matches given id
+	 */
+	public Reimbursement updateReimbursement(String email, String selection, double rAmount);
+	
+	/**
+	 * Creates a new employee in the DB
+	 * 
+	 * @param employee the Employee that should be created
+	 * @return true or false based on success or failure of employee creation
+	 */
+
+	
+}

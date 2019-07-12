@@ -1,0 +1,11 @@
+package gres.data;
+
+public interface EmployeeDAO {
+
+	
+	public void dataBaseTransaction(String query);
+	public void createRequest();
+	public void updateRequest();
+	public void getRequest();
+	public void UserLogin(String query, int roleId, String passWord, String eMail);
+}

@@ -1,0 +1,93 @@
+package com.project1.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
+import com.project1.utility.ConnectionUtility;
+import com.project1.utility.CloseStreams;
+
+
+/*One DAO class employee table or view
+
+Create 
+Retrieve
+Update
+Delete
+
+*/
+public class EmployeeDAO implements EmployeeDAOContract{
+
+	Connection conn = null;
+	
+	public List<Employee> getEmployee() {
+		return null;
+
+
+
+		
+	}
+
+
+	public Employee getEmployeeView(int id) {
+		
+		
+		try {
+
+			conn = ConnectionUtility.getConnection();
+			
+
+			String query = "INSERT INTO USER_ACCOUNT VALUES(" + id +","+ firstName1 +","+ lastName1 +"," + userName1 + "," + passWord1 + "," + address1 + "," + city1 + "," + state1 + "," + zipCode +")";
+	
+			PreparedStatement postQuery = conn.prepareStatement(query);
+			postQuery.executeQuery();
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	finally {
+		try {
+			conn.close();
+			System.out.println("Your information has been updated in the system.");
+			System.out.flush();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+}
+	PreparedStatement  query= null;
+	try{
+		Connection conn = ConnectionUtility.getConnection();
+		query = conn.prepareStatement("UPDATE USERACCOUNT SET BALANCE = ? WHERE ACCOUNT_TYPE = ?");
+		query.setDouble(1, );
+		query.setString(2,);
+		query.executeUpdate();
+}catch(SQLException e) {
+	e.printStackTrace();
+}finally {
+	CloseStreams.close(query);
+}
+	}
+
+	public void updateAccountInfo(Employee employee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewPendingReimbursementsRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void viewResolvedReimbursementRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

@@ -1,0 +1,17 @@
+1562682559235	Rename package 'com.project1.gres.controller'
+1562683189521	Rename resource 'index.jsp'
+1562712645869	Rename type 'MasterServlet'
+1562717090642	Rename type 'EmployeeDAOImpl'
+1562756198912	Move 'GresLoginServlet.java' to 'service'
+1562764954238	Delete element
+1562871770713	Move 'errfwelcome.html' to 'pages'
+1562871777408	Move 'madwelcome.html' to 'pages'
+1562877314209	Delete element
+1562885820244	Move 'AccountInfo.html' to 'pages'
+1562885823042	Move 'AllApprovedRequests.html' to 'pages'
+1562885825498	Move 'AllDeniedRequests.html' to 'pages'
+1562885827914	Move 'AllRequests.html' to 'pages'
+1562885830849	Move 'NewRequests.html' to 'pages'
+1562895257008	Rename type 'ReimbursementDAO'
+1562895290235	Move file
+1562895298926	Move compilation unit

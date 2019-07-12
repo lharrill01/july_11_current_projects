@@ -1,0 +1,4 @@
+127.0.0.1 - - [05/Jul/2019:09:47:06 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [05/Jul/2019:09:47:07 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [05/Jul/2019:09:47:24 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [05/Jul/2019:09:47:25 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -

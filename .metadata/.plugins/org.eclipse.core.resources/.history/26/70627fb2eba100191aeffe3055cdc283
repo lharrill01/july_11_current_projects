@@ -1,0 +1,99 @@
+package com.project1.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.project1.utility.ConnectionUtility;
+import com.project1.utility.CloseStreams;
+
+
+/*One DAO class employee table or view
+
+Create 
+Retrieve
+Update
+Delete
+
+*/
+public class EmployeeDAO implements EmployeeDAOContract{
+
+	Connection conn = null;
+	
+	public List<Employee> getEmployee() {
+		return null;
+
+
+
+		
+	}
+
+
+	public Employee getEmployeeView(int id) {
+		
+		
+		try {
+
+			conn = ConnectionUtility.getConnection();
+			
+
+			String query = "INSERT INTO USER_ACCOUNT VALUES";
+	
+			PreparedStatement postQuery = conn.prepareStatement(query);
+			postQuery.executeQuery();
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	finally {
+		try {
+			conn.close();
+			System.out.flush();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+}
+	PreparedStatement  query= null;
+	try{
+		Connection conn = ConnectionUtility.getConnection();
+		query = conn.prepareStatement("Select * From User_Account");
+		query.setInt(1, id);
+		query.setString(2, "first_name");
+		query.setString(2, "last_name");
+		query.setString(2,"email");
+		query.setString(2, "role");
+		query.setString(2, "password");
+ 		query.setInt(2, roleId);
+		
+		query.executeUpdate();
+}catch(SQLException e) {
+	e.printStackTrace();
+}
+	finally {
+	CloseStreams.close(query);
+}
+	return null;
+	}
+
+	public void updateAccountInfo(Employee employee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewPendingReimbursementsRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void viewResolvedReimbursementRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

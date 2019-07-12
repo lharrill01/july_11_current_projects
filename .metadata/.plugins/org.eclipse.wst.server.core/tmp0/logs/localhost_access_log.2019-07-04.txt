@@ -1,0 +1,10 @@
+127.0.0.1 - - [04/Jul/2019:21:20:56 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:21:20:57 -0400] "GET /projectone/index.html HTTP/1.1" 200 751
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:21:21:03 -0400] "POST /LoginServlet HTTP/1.1" 404 1086
+127.0.0.1 - - [04/Jul/2019:22:00:40 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:22:00:40 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:22:01:20 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:22:01:20 -0400] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:22:01:28 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:22:03:43 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [04/Jul/2019:22:03:45 -0400] "GET /projectone/LoginServlet HTTP/1.1" 200 -

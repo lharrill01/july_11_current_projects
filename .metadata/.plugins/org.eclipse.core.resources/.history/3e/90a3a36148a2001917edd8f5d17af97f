@@ -1,0 +1,86 @@
+package com.project1.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.project1.utility.ConnectionUtility;
+import com.project1.utility.CloseStreams;
+
+
+/*One DAO class employee table or view
+
+Create 
+Retrieve
+Update
+Delete
+
+*/
+public class EmployeeDAO implements EmployeeDAOContract{
+
+	Connection conn = null;
+	PreparedStatement stmt = null;
+	ResultSet rS = null;	
+	
+	public List<Employee> getEmployee() {
+		return null;
+
+
+
+		
+	}
+
+
+	public Employee getEmployeeView(int id, int roleId) {
+		
+		
+
+	PreparedStatement  query= null;
+	try{
+		Connection conn = ConnectionUtility.getConnection();
+		query = conn.prepareStatement("Select * From User_Account where id=? first_name=? last_name=? username=? role=? password=? roleId =?");
+		query.setInt(1, id);
+		query.setString(2, "first_name");
+		query.setString(3, "last_name");
+		query.setString(4,"username");
+		query.setString(5, "role");
+		query.setString(6, "password");
+ 		query.setInt(7, roleId);
+		
+		query.executeUpdate();
+}catch(SQLException e) {
+	e.printStackTrace();
+}
+	finally {
+	CloseStreams.close(query);
+}
+	return null;
+	}
+
+	public void updateAccountInfo(Employee employee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewPendingReimbursementsRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void viewResolvedReimbursementRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Employee getEmployeeView(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

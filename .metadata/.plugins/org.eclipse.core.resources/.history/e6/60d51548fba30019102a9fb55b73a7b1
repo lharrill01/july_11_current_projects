@@ -1,0 +1,110 @@
+package gres.data;
+
+import gres.utility.ConnectionUtility;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import gres.model.Employee;
+import gres.utility.CloseStreams;
+
+
+
+
+public class EmployeeDAOImplOJDBC implements EmployeeDAO {
+	
+	static List<Employee> employeeList = new ArrayList<>();
+	
+	static {
+		
+		
+	}
+
+	
+	
+	@Override
+	public Employee getEmployee(String email, String password, int roleid) {
+		
+		PreparedStatement statement = null;
+		ResultSet result = null;
+
+		
+		// We're going to do a try-with-resources
+		// this lets us open a resource, like a db connection
+		// as a part of starting our try block, and it
+		// will be closed automatically when the try
+		// block finishes.
+		try(Connection conn = ConnectionUtility.getConnection()) {
+			//create our statement:
+			statement =  conn.prepareStatement("SELECT * FROM USER_ACCOUNT where email=? password=? roleid=?");
+			statement.setString(1, email);
+			statement.setString(2, password);
+			statement.setInt(3, roleid);
+			
+			// Statement objects can execute SQL queries
+			// THe most basic form of this:
+			result = statement.executeQuery();
+			// ResultSet stores all the results from a successful query
+			
+			// Create ourselves a new PetType object for each row:
+			while(result.next()) {
+				
+			email = result.getString("email");
+			password = result.getString("password");
+			roleid = result.getInt("roleid");
+			System.out.println(roleid);
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			CloseStreams.close(statement);
+			CloseStreams.close(result);
+		}
+				
+		for(Employee empl: employeeList) {
+			if(empl.getEmail().equals(email)) {
+				if(empl.getPassWord().equals(password)) {
+					if(empl.getRoleId() == roleid) {
+						System.out.println(roleid);
+						return empl;
+					}
+					return null;
+				}
+				return null;
+			}
+			
+		}
+		return null;
+		
+	}
+
+	@Override
+	public Employee getEmployee(long id) {
+		for(Employee empl: employeeList) {
+			if(empl.getId() == id) {
+				return empl;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public boolean createEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeList.add(employee);
+	}
+
+	@Override
+	public boolean updateEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
+	
+

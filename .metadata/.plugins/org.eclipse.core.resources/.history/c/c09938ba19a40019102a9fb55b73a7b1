@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home: GERS</title>
+</head>
+<body>
+	<nav>
+		<a href="Account.html">Account Info</a>
+		<a href="pendingRequests.html">Pending Requests</a>
+		<a href="approvedRequests.html">Approved Requests</a>
+		<a href="deniedRequests.html">Denied Requests</a>
+	</nav>
+    <h2>Welcome to the Electronic Reimbursement Request Form</h2>
+<div class=>
+    <div>    
+        <form action="/gres/MainServlet" method="post">
+
+    	<div>
+        	<label> Email: </label>
+        	<input type="email" name="email">
+		</div>
+		<div>
+			<select>
+				<option value="Food">Food</option>
+				<option value="Gas">Gas</option>
+				<option value="Rental">Rental</option>
+				<option value="Hotel">Hotel</option>
+			</select>
+		</div>
+    	<div>
+        	<label>Total Amount to be Reimbursed: </label>
+        	<input type="text" name="rAmount">
+    	</div>
+    	<div>
+        	<label> Upload Receipts Here: </label>
+        	<input type="file" name="reciepts" accept="image/*" multiple>
+    
+        	<input type="submit" value="submit">
+        </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+package gres.model;
+
+public class Employee {
+
+}

@@ -1,0 +1,62 @@
+package gres.data;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import gres.model.Employee;
+import gres.model.Reimbursement;
+import gres.utility.CloseStreams;
+import gres.utility.ConnectionUtility;
+
+public class ReimbursementDAOImplOJDBC implements ReimbursementDAO {
+
+	@Override
+	public Reimbursement getReimbursement(int id String email, String selection, double rAmount, boolean adchoice) {
+
+		PreparedStatement statement = null;
+		ResultSet result = null;
+
+		try(Connection conn = ConnectionUtility.getConnection()) {
+			//create our statement:
+			statement =  conn.prepareStatement("SELECT * FROM Reimbursement_pool where email=?");
+			statement.setInt(1, id);
+			statement.setString(2, email);
+			statement.setString(3, selection);
+			statement.setBoolean(4, adchoice);
+			
+			// Statement objects can execute SQL queries
+			// THe most basic form of this:
+			statement.execute();
+			// ResultSet stores all the results from a successful query
+			result = statement.getResultSet();
+			// Create ourselves a new PetType object for each row:
+			if(result.next()) {
+				
+			email = result.getString("email");
+			password = result.getString("password");
+			roleid = result.getInt("roleid");
+			System.out.println(email + " " + password);
+			System.out.println("RoleID 1 in EmployeeDAOJDBC is: " + roleid);
+			return new Employee(email, password, roleid);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			CloseStreams.close(statement);
+			CloseStreams.close(result);
+		}
+		
+		
+		return null;
+	}
+
+	@Override
+	public Reimbursement updateReimbursement(String email, String selection, double rAmount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

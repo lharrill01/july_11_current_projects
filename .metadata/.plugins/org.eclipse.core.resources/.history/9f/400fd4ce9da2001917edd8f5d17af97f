@@ -1,0 +1,5 @@
+package gres.data;
+
+public interface EmployeeDAO {
+
+}

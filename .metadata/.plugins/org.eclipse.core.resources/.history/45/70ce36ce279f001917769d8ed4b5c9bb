@@ -1,0 +1,5 @@
+package com.revature.Data;
+
+public interface UserDAO {
+
+}

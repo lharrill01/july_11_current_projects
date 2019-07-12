@@ -1,0 +1,96 @@
+package gres.data;
+
+import gres.utility.ConnectionUtility;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import gres.model.Employee;
+import gres.utility.CloseStreams;
+
+
+
+
+public class EmployeeDAOImplOJDBC implements EmployeeDAO {
+	
+
+
+	@Override
+	public Employee getEmployee(String email, String password, int roleid) {
+		
+		List<Employee> employeeList = new ArrayList<>();
+		
+		// We're going to do a try-with-resources
+		// this lets us open a resource, like a db connection
+		// as a part of starting our try block, and it
+		// will be closed automatically when the try
+		// block finishes.
+		try(Connection conn = ConnectionUtility.getConnection()) {
+			//create our statement:
+			PreparedStatement statement =  conn.prepareStatement("SELECT * FROM USER_ACCOUNT");
+			// Statement objects can execute SQL queries
+			// THe most basic form of this:
+			ResultSet result = statement.executeQuery();
+			// ResultSet stores all the results from a successful query
+			
+			// Create ourselves a new PetType object for each row:
+			while(result.next()) {
+				employee.add(new Request(result));
+
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			CloseStreams.close(statement);
+			CloseStreams.close(result);
+		}
+		
+		return employee;
+		
+		
+		
+		for(Employee empl: employeeList) {
+			if(empl.getEmail().equals(email)) {
+				if(empl.getPassWord().equals(password)) {
+					if(empl.getRoleId() == roleid) {
+						return empl;
+					}
+					return null;
+				}
+				return null;
+			}
+			
+		}
+		return null;
+	}
+
+	@Override
+	public Employee getEmployee(long id) {
+		for(Employee empl: employeeList) {
+			if(empl.getId() == id) {
+				return empl;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public boolean createEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeList.add(employee);
+	}
+
+	@Override
+	public boolean updateEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
+	
+}

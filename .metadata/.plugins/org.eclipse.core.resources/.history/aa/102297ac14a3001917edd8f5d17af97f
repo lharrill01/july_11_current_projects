@@ -1,0 +1,22 @@
+package gres.service;
+
+public class EmployeeLoginService {
+	
+	EmployeeDAO employeeDAO;
+	static LoginService ls;
+	
+	private LoginService(EmployeeDAO employeeDAO) {
+		this.employeeDAO = employeeDAO;
+		
+	}
+
+	public static LoginService getInstance(EmployeeDAO employeeDAO) {
+		if(ls == null) {
+			ls = new LoginService(employeeDAO);
+			return ls;
+		}
+		else {
+			return ls;
+		}
+	}
+}

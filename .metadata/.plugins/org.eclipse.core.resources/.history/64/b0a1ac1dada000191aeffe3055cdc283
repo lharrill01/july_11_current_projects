@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<h2>test</h2>
+<body>
+				<%
+				if(session.getAtribute("username") == null){
+				res.sendRedirect("Login.html")
+				}
+				%>
+				
+				Tesy
+		
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+package com.project1.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
+import com.project1.utility.ConnectionUtility;
+import com.revature.controller.ULogin;
+import com.project1.utility.CloseStreams;
+
+
+/*One DAO class employee table or view
+
+Create 
+Retrieve
+Update
+Delete
+
+*/
+public class EmployeeDAO implements EmployeeDAOContract{
+
+	Connection conn = null;
+	PreparedStatement stmt = null;
+	ResultSet rS = null;	
+	Employee employee = null;
+	String userName = null;
+	
+	public List<Employee> getEmployee() {
+		return null;
+
+
+
+		
+	}
+
+
+	public Employee getEmployeeView(int id, int roleId) {
+		
+		
+
+	PreparedStatement  query= null;
+	try{
+		Connection conn = ConnectionUtility.getConnection();
+		query = conn.prepareStatement("Select * From User_Account where id=? first_name=? last_name=? email=? role=? password=? roleId =?");
+		query.setInt(1, id);
+		query.setString(2, "first_name");
+		query.setString(3, "last_name");
+		query.setString(4,"email");
+		query.setString(5, "role");
+		query.setString(6, "password");
+ 		query.setInt(7, roleId);
+		
+		query.executeUpdate();
+}catch(SQLException e) {
+	e.printStackTrace();
+}
+	finally {
+	CloseStreams.close(query);
+}
+	return null;
+	}
+
+	public void updateAccountInfo(Employee employee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewPendingReimbursementsRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void viewResolvedReimbursementRequests(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Employee getEmployeeView(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Employee getEmployee(String userName, String passWord, int roleId) {
+		public void checkEmployee() {
+			// TODO Auto-generated method stub
+			
+			try {
+				conn = ConnectionUtility.getConnection();
+				
+				stmt = conn.prepareStatement("SELECT * FROM USER_ACCOUNT WHERE ID = ? FIRST_NAME=? LAST_NAME=? EMAIL=? PASSWORD = ? ROLEID");
+				stmt.setInt(1 , "id");
+				stmt.setString(2, "firstName");
+				stmt.setString(3, "lastName");
+				stmt.setString(4, "email");
+				stmt.setString(5, "passWord");
+				stmt.setString(6, "role");
+				stmt.setString(7, "roleId");
+
+
+				stmt.execute();
+				rS = stmt.getResultSet();
+//				try {
+					rS.next();
+				ulogin = new ULogin(rS);
+			/*		
+				ULogin ULogin = new ULogin(rS.getInt("userid"),
+					rS.getString("useraccount"),
+					rS.getDouble("balance"),
+					rS.getInt("password"));
+					*/
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("here");
+			}
+
+
+			finally {
+			CloseStreams.close(rS);
+			CloseStreams.close(stmt);
+		}
+			
+		}
+	}
+
+	
+}

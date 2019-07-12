@@ -1,0 +1,38 @@
+package gres.data;
+
+import com.revature.model.User;
+
+public interface EmployeeDAO {
+
+	/**
+	 * Single line description
+	 * 
+	 * information about params and return
+	 */
+	
+	/**
+	 * Gets Employee from DB based on email and password
+	 * 
+	 * @param email email of the employee
+	 * @param password password of the user
+	 * @return the user from the DB that matches username and password
+	 */
+	public Employee getEmployee(String email, String password);
+	
+	/**
+	 * Gets User from DB based on id
+	 * 
+	 * @param id
+	 * @return the user from the DB that matches given id
+	 */
+	public Employee getEmployee(long id);
+	
+	/**
+	 * Creates a new employee in the DB
+	 * 
+	 * @param employee the Employee that should be created
+	 * @return true or false based on success or failure of employee creation
+	 */
+	public boolean createEmployee(Employee employee);
+	
+}

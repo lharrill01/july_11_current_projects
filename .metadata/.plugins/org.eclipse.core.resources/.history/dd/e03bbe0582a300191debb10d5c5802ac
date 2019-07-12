@@ -1,0 +1,43 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+	<servlet-name>ControllerServlet</servlet-name>
+	<servlet-class>com.gres.controller.MasterServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<display-name>MasterServlet</display-name>
+  	<description></description>
+  	<servlet-class>gres.controller.MasterServlet</servlet-class>
+  </servlet>
+ 
+ 
+ <servlet>
+ 	<servlet-name>LoginServlet</servlet-name>
+ 	<servlet-class>gres.service.LoginServlet</servlet-class>
+ </servlet>
+ <servlet>
+ 	<servlet-name>GresLoginServlet</servlet-name>
+ 	<display-name>GresLoginServlet</display-name>
+ 	<description></description>
+ 	<servlet-class>gres.controller.GresLoginServlet</servlet-class>
+ </servlet>
+ 
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<url-pattern>/MasterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GresLoginServlet</servlet-name>
+  	<url-pattern>/GresLoginServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

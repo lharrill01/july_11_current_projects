@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2486647351.index
+\servlets\src\main\resources
+C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\452448318.index
+\projectone\src\main\resources
+C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1881807497.index
+\project1\src\main\resources
+C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1307240968.index
+\servlet\src\main\resources
+C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1383646731.index
+\gres\src\main\resources

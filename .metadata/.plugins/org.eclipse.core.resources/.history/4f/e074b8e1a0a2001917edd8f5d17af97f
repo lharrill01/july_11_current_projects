@@ -1,0 +1,7 @@
+package gres.data;
+
+public interface EmployeeDAO {
+
+	
+	public void dataBaseTransaction(String query);
+}

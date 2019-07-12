@@ -1,0 +1,16 @@
+<html>
+<body>
+<h2>Employee Login</h2>
+<h3>Generic Electronic Reimbursement System</h3>
+
+<form action="Login" method="post">
+	<label>Username: </label>
+	<input type="text" name="username">
+	<label>Password: </label>
+	<input type="password" name="password">
+	<input type="radio" name="ESswitch" value=1>
+	<input type="radio" name="ESswitch" value=2>
+	<input type="submit" value="Login">
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+package com.revature;
+
+public class WordCount {
+	
+	public static void main(String[] args) {
+		
+		if(args.length < 2) {
+			System.out.println("WordCount usage: <input dir><output dir>");
+			System.exit(-1);
+		}
+		
+		Job job = new Job();
+	}
+
+}

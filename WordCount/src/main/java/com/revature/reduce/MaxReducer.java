@@ -1,0 +1,36 @@
+package com.revature.reduce;
+
+import java.io.IOException;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.mockito.internal.stubbing.VoidMethodStubbableImpl;
+
+/*
+ *  You should use HDFS Disributed Cache instead of static variables
+ *  
+ *  
+ *  */
+
+public class MaxReducer extends Reducer<Text, IntWritable, Text, IntWritable>{
+	
+	public static String CURRENT_MAX_WORD = null;
+	public static int CURRENT_MAX_COUNT = Integer.MIN_VALUE;
+	
+	@Override
+	protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+		
+		for(IntWritable value: values) {
+			if(value.get() > CURRENT_MAX_COUNT) {
+				CURRENT_MAX_COUNT = value.get();
+				CURRENT_MAX_WORD = key.toString();
+				context.write(new Text(CURRENT_MAX_WORD), new IntWritable(CURRENT_MAX_COUNT));
+
+			}
+			// Same as the above if statement
+			//CURRENT_MAX_COUNT = (value.get() > CURRENT_MAX_COUNT) ? value.get():CURRENT_MAX_COUNT;
+		}
+	}
+
+}

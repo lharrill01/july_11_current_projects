@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +13,36 @@
     <title>Pending Requests</title>
 </head>
 <body>
-    <nav class="nav nav-link navbar navbar-dark navbar-expand-lg navbar-light bg-light navbar-nav navbar-toggler">
-        <a href="errfwelcome.html" >NewRequests</a>
-        <a href="ApprovedRequests.html">ApprovedRequests</a>
-        <a href="DeniedRequests.html" >DeniedRequests</a>
-        <a href="AllRequests.html">All Requests</a>
-    </nav> 
-
+<header><h2>Employee Pending Requests</h2></header>
+	<nav class="navbar navbar-expand-sm bg-light bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+					<a class="nav-link" href="errfwelcome.html">New Request</a>			
+			</li>
+			<li class="nav-item">
+					<a class="nav-link" href="AccountInfo.html">Account Info</a>			
+			</li>
+			<li class="nav-item">
+					<a class="nav-link" href="PendingRequests.html">Pending Requests</a>			
+			</li>
+			<li class="nav-item">
+					<a class="nav-link" href="ApprovedRequests.html">Approved Requests</a>			
+			</li>
+			<li class="nav-item">
+					<a class="nav-link" href="DeniedRequests.html">Denied Requests</a>
+			</li>	
+		</ul>		
+	</nav>
+<form action="/GresFetchServlet" method="get">
+		<table>
+			<tr>
+				<td>Email: </td>
+			</tr>
+			<tr>
+				<td colspan="2"><button id="getPendingR" type="submit" value="Submit"></button></td>
+			</tr>
+		</table>
+</form>
 
 
 

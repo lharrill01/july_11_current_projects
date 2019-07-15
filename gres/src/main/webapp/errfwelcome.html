@@ -1,39 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="/js/fetchpost.js" defer></script>
-	<title>Home: GERS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/js/fetchpost.js" defer></script>
+    <title>Pending Requests</title>
 </head>
 <body>
+<header><h2>New Employee Requests</h2></header>
 	<nav class="navbar navbar-expand-sm bg-light bg-dark navbar-dark">
 		<ul class="navbar-nav">
 			<li class="nav-item">
-					<a class="nav-link" href="webapp/Account.html">Account Info</a>			
+					<a class="nav-link" href="errfwelcome.html"active>New Request</a>			
 			</li>
 			<li class="nav-item">
-					<a class="nav-link" href="webapp/PendingRequests.html">Pending Requests</a>			
+					<a class="nav-link" href="AccountInfo.html"active>Account Info</a>			
 			</li>
 			<li class="nav-item">
-					<a class="nav-link" href="webapp/approvedRequests.html">Approved Requests</a>			
+					<a class="nav-link" href="PendingRequests.html">Pending Requests</a>			
 			</li>
 			<li class="nav-item">
-					<a class="nav-link" href="webapp/deniedRequests.html">Denied Requests</a>
-			</li>			
+					<a class="nav-link" href="ApprovedRequests.html">Approved Requests</a>			
+			</li>
+			<li class="nav-item">
+					<a class="nav-link" href="DeniedRequests.html">Denied Requests</a>
+			</li>	
+		</ul>		
 	</nav>
     <h2>Welcome to the Electronic Reimbursement Request Form</h2>
 <div>
-    <div>    
+    <div class="input-group">    
         <form id="swForm" action="/gres/GresFetchServlet" method="post" class="was-validated">
 
     	<div class="form-group">
+    		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
         	<label> Email: </label>
-        	<input type="email" class="form-control" id="email" name="email" required>
+        	<input type="email" class="form-control col-xs-3" id="email" name="email" placeholder="Email" required>
 		</div>
-		<div>
+		<div class="dropdown">
 			<select class="" name="rStuff" required>
 				<option value="Food">Food</option>
 				<option value="Gas">Gas</option>
@@ -42,19 +52,22 @@
 			</select>
 		</div>
     	<div>
+    		<fieldset>
         	<label>Total Amount to be Reimbursed: </label>
         	<input type="text" name="rAmount" required>
-        	<label for="inputbox">Check the box</label>
-        	<input type="checkbox" id="inputbox"name="adchoice" value=0 required>
+        	<label for="inputbox">Confirm your amount</label>
+        	<input type="checkbox" id="inputbox"name="adchoice" value="pending" required>
+        	</fieldset>
     	</div>
     	<div>
     		
     	</div>
-    	    	<div>
+    	   <div>
+    	   <fieldset>
         	<label> Upload Receipts Here: </label>
         	<input type="file" name="reciepts" accept="image/*" multiple>
-    
-        	<input type="submit" value="submit">
+    		<input type="submit" id="id" name="Submit" value="Submit">
+    		</fieldset>
         </div>
         </form>
     </div>

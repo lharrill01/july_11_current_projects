@@ -9,3 +9,5 @@ C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.cor
 \servlet\src\main\resources
 C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1383646731.index
 \gres\src\main\resources
+C:\Users\lharrill01\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1882276610.index
+\cookies\src\main\resources

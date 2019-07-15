@@ -35,6 +35,18 @@
  	<description></description>
  	<servlet-class>gres.service.GresFetchServlet</servlet-class>
  </servlet>
+ <servlet>
+ 	<servlet-name>RequestServlet</servlet-name>
+ 	<display-name>RequestServlet</display-name>
+ 	<description></description>
+ 	<servlet-class>gres.service.RequestServlet</servlet-class>
+ </servlet>
+ <servlet>
+ 	<servlet-name>AccountInfoServlet</servlet-name>
+ 	<display-name>AccountInfoServlet</display-name>
+ 	<description></description>
+ 	<servlet-class>gres.service.AccountInfoServlet</servlet-class>
+ </servlet>
  
   
   <servlet-mapping>
@@ -53,6 +65,14 @@
   <servlet-mapping>
   	<servlet-name>GresFetchServlet</servlet-name>
   	<url-pattern>/GresFetchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RequestServlet</servlet-name>
+  	<url-pattern>/RequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AccountInfoServlet</servlet-name>
+  	<url-pattern>/AccountInfoServlet</url-pattern>
   </servlet-mapping>
   
   

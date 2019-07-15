@@ -2,6 +2,7 @@ package gres.service;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import gres.data.EmployeeDAOImplOJDBC;
+import gres.model.Employee;
 import gres.model.Reimbursement;
 
 /**
@@ -41,17 +43,26 @@ private static EmployeeLoginService employeeLoginService = EmployeeLoginService.
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		// Gets attribute from session 
+		Employee employee = (Employee) req.getSession().getAttribute("employee");
 
-    	Reimbursement reimbursement = (Reimbursement) req.getSession().getAttribute("reimbursement");
-    	
-    	ObjectMapper om = new ObjectMapper();
-    	
-    	String jsonRepReimbursement = reimbursement == null ? "null" : om.writeValueAsString(reimbursement);
-    	
-    	log.trace("JSON representation: " + jsonRepReimbursement);
-    	
-    	res.setContentType("application/json");
-    	res.getWriter().write(jsonRepReimbursement);	
+		// Using Object Mapper to turn Java Objects into JSON
+		ObjectMapper om = new ObjectMapper();
+				
+		// Proactively checks to see if Employee is null
+		// If not stringfy the object Employee as a String jsonRepEmployee
+		String jsonRepEmployee = employee == null ? "" : om.writeValueAsString(employee);
+		
+		log.trace("JSON " + jsonRepEmployee);
+//		System.out.println("JSON " + jsonRepEmployee);
+		
+		// setting content type tells browser what to expect in body of response
+		res.setContentType("application/json");
+		res.getWriter().write(jsonRepEmployee);
+		
+		// Commits response
+		res.flushBuffer();
 	}
 
 	/**
@@ -75,14 +86,25 @@ private static EmployeeLoginService employeeLoginService = EmployeeLoginService.
 			session.setAttribute("email", employeeLoginService.getEmployee(email, password, roleId));
 
 			
-			req.getRequestDispatcher("webapp/errfwelcome.html").forward(req, res);
+			//req.getRequestDispatcher("errfwelcome.html").forward(req, res);
 			
-//			if(roleId == 1) {
-//			req.getRequestDispatcher("/pages/errfwelcome.html").forward(req, res);
-//			}
-//			else {
-//				req.getRequestDispatcher("/pages/madwelcome.html").forward(req, res);
-//			}
+			switch(roleId) {
+			case 1:
+				System.out.println("Here");
+				req.getRequestDispatcher("errfwelcome.html").forward(req, res);
+				System.out.println(roleId);
+				System.out.println("Case 1");
+				break;
+				
+			case 2:
+				req.getRequestDispatcher("AllPendingRequests.html").forward(req, res);
+				System.out.println("Case 2");
+				break;
+			default:
+				res.sendRedirect("index.html");
+			}
+
+			
 		}
 		
 		//res.getWriter().write("Hi");

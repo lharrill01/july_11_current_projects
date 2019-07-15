@@ -18,6 +18,24 @@ public class Employee {
 
 
 
+//	public Employee(String email2, String password2) {
+//		// TODO Auto-generated constructor stub
+//	}
+
+
+
+
+
+	public Employee(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+
+
+
+
+
 	public String getEmail() {
 		return email;
 	}

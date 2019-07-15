@@ -4,18 +4,18 @@ public class Reimbursement {
 	
 	int id;
 	String email;
-	String selection;
+	String rStuff;
 	double rAmount;
 	String adchoice;
 	
 
 	
 	
-	public Reimbursement(int id, String email, String selection, double rAmount, String adchoice) {
+	public Reimbursement(int id, String email, String rStuff, double rAmount, String adchoice) {
 		super();
 		this.id = id;
 		this.email = email;
-		this.selection = selection;
+		this.rStuff = rStuff;
 		this.rAmount = rAmount;
 		this.adchoice = adchoice;
 	}
@@ -51,15 +51,15 @@ public class Reimbursement {
 
 
 
-	public String getSelection() {
-		return selection;
+	public String getrStuff() {
+		return rStuff;
 	}
 
 
 
 
-	public void setSelection(String selection) {
-		this.selection = selection;
+	public void setrStuff(String rStuff) {
+		this.rStuff = rStuff;
 	}
 
 
@@ -95,7 +95,7 @@ public class Reimbursement {
 
 	@Override
 	public String toString() {
-		return "Reimbursement [id=" + id + ", email=" + email + ", selection=" + selection + ", rAmount=" + rAmount
+		return "Reimbursement [id=" + id + ", email=" + email + ", rStuff=" + rStuff + ", rAmount=" + rAmount
 				+ ", adchoice=" + adchoice + "]";
 	}
 	

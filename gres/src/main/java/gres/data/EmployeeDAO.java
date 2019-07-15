@@ -45,4 +45,8 @@ public interface EmployeeDAO {
 
 	Employee getEmployee(String email);
 	
+	public Employee getAccountInfo(String email, String password);
+	
+	public Employee updateAccountInfo(String email, String password);
+	
 }

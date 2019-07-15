@@ -2,6 +2,7 @@ package gres.data;
 
 import gres.model.Employee;
 import gres.model.Reimbursement;
+import gres.model.ReimbursementNoId;
 
 public interface ReimbursementDAO {
 
@@ -21,6 +22,9 @@ public interface ReimbursementDAO {
 	 */
 	public Reimbursement getReimbursement(int id, String email, String rStuff, double rAmount, String adchoice);
 	
+	public ReimbursementNoId getReimbursementNoId(String email, String rStuff, double rAmount, String adchoice);
+
+	
 	/**
 	 * Gets employee from DB based on id
 	 * 
@@ -28,7 +32,9 @@ public interface ReimbursementDAO {
 	 * @return the employee from the DB that matches given id
 	 */
 	public Reimbursement updateReimbursement(int id, String email, String rStuff, double rAmount, String adchoice);
-	
+
+	public ReimbursementNoId updateReimbursementNoId(String email, String rStuff, double rAmount, String adchoice);
+
 	/**
 	 * Creates a new employee in the DB
 	 * 
@@ -37,4 +43,8 @@ public interface ReimbursementDAO {
 	 */
 
 	public Reimbursement createReimbursement(int id, String email, String rStuff, double rAmount, String adchoice);
+	
+	public ReimbursementNoId createReimbursementNoId(String email, String rStuff, double rAmount, String adchoice);
+	
+	
 }

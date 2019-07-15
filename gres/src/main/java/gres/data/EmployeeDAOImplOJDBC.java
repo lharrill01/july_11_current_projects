@@ -109,6 +109,79 @@ public class EmployeeDAOImplOJDBC implements EmployeeDAO {
 		return null;
 	}
 
+	@Override
+	public Employee getAccountInfo(String email, String password) {
+		PreparedStatement statement = null;
+		ResultSet result = null;
+
+
+		try(Connection conn = ConnectionUtility.getConnection()) {
+			//create our statement:
+			statement =  conn.prepareStatement("SELECT * FROM USER_ACCOUNT where email=? AND password=?");
+			statement.setString(1, email);
+			statement.setString(2, password);
+
+			
+			// Statement objects can execute SQL queries
+			// THe most basic form of this:
+			statement.execute();
+			// ResultSet stores all the results from a successful query
+			result = statement.getResultSet();
+			// Create ourselves a new PetType object for each row:
+			if(result.next()) {
+				
+			email = result.getString("email");
+			password = result.getString("password");
+
+			System.out.println(email + " " + password);
+			return new Employee(email, password);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			CloseStreams.close(statement);
+			CloseStreams.close(result);
+		}
+		return null;
+	}
+
+	@Override
+	public Employee updateAccountInfo(String email, String password) {
+		PreparedStatement statement = null;
+		ResultSet result = null;
+
+
+		try(Connection conn = ConnectionUtility.getConnection()) {
+			//create our statement:
+			statement =  conn.prepareStatement("SELECT * FROM USER_ACCOUNT where email=? AND password=?");
+			statement.setString(1, email);
+			statement.setString(2, password);
+
+			
+			// Statement objects can execute SQL queries
+			// THe most basic form of this:
+			statement.execute();
+			// ResultSet stores all the results from a successful query
+			result = statement.getResultSet();
+			// Create ourselves a new PetType object for each row:
+			if(result.next()) {
+				
+			email = result.getString("email");
+			password = result.getString("password");
+
+			System.out.println(email + " " + password);
+			return new Employee(email, password);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			CloseStreams.close(statement);
+			CloseStreams.close(result);
+		}
+		return null;
+	}
 }
 	
 
